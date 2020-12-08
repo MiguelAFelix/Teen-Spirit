@@ -148,6 +148,14 @@
       <artifactId>maven-dependency-plugin</artifactId>
       <version>3.1.2</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.github.jsimone</groupId>
+      <artifactId>webapp-runner</artifactId>
+      <version>7.0.22</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -183,6 +191,9 @@
             <id>copy-dependencies</id>
             <phase>package</phase>
             <goals><goal>copy-dependencies</goal></goals>
+            <configuration>
+              <includeArtifactIds>webapp-runner</includeArtifactIds>
+            </configuration>
           </execution>
         </executions>
       </plugin>
