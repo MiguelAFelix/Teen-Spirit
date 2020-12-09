@@ -67,8 +67,7 @@ public class WebController {
 
     }
 
-
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action = save")
     public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "signUp";
@@ -106,7 +105,16 @@ public class WebController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
+    public String cancelSaveCustomer() {
+        return "redirect:/dashboard/";
+    }
 
+    @RequestMapping(method = RequestMethod.GET, path = {"/logout"})
+    public String logout(){
+        authService.logout();
+        return "home";
+    }
 
     @Autowired
     public void setAuthService(AuthService authService) {
@@ -122,4 +130,6 @@ public class WebController {
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
+
+
 }

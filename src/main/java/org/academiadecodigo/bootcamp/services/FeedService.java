@@ -2,10 +2,13 @@ package org.academiadecodigo.bootcamp.services;
 
 import org.academiadecodigo.bootcamp.model.Post;
 import org.academiadecodigo.bootcamp.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class FeedService {
 
     private AuthService authService;
@@ -28,5 +31,10 @@ public class FeedService {
     public void removePost(Post post){
         postList.remove(post);
         authService.getAccessingUser().removePost(post);
+    }
+
+    @Autowired
+    public void setAuthService(AuthService authService) {
+        this.authService = authService;
     }
 }

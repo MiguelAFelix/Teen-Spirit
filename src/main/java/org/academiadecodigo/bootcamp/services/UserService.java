@@ -23,6 +23,7 @@ public class UserService {
 
     }
 
+
     public void removeUser(User user){
         userMap.remove(user.getId());
     }
