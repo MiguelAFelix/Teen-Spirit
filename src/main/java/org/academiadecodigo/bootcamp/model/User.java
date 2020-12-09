@@ -1,15 +1,25 @@
 package org.academiadecodigo.bootcamp.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
 
-
+    @NotNull(message = "last name is mandatory")
+    @NotBlank(message = "last name is mandatory")
+    @Size(min=3, max=64)
     private String username;
     private int id;
+
+    @Email
     private String email;
+
+    @Size(min=7, max=16)
     private String password;
 
     private List<Post> box = new ArrayList<>();
