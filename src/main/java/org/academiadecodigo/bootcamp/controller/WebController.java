@@ -146,7 +146,7 @@ public class WebController {
         model.addAttribute("post", new Post());
         return "test";
     }
-    @RequestMapping(method = RequestMethod.POST , path = "/test", params = "action = save")
+    @RequestMapping(method = RequestMethod.POST , path = "/test")
     public String encodeImage(@ModelAttribute Post post) throws IOException {
 
         this.post = post;
