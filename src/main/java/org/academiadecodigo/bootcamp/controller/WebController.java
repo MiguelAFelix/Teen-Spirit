@@ -15,7 +15,7 @@ public class WebController {
         return "home";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/dashboard"})
+    @RequestMapping(method = RequestMethod.GET, path = {"/dashboard" , "", "/"})
     public String getDashboard() {
 
         return "home";
