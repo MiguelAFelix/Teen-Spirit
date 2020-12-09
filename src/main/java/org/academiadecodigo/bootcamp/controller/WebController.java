@@ -147,11 +147,11 @@ public class WebController {
         return "test";
     }
     @RequestMapping(method = RequestMethod.POST , path = "/test")
-    public String encodeImage(@ModelAttribute Post post) throws IOException {
+    public String encodeImage(@ModelAttribute ("post") Post post) throws IOException {
 
         this.post = post;
         File file = post.getImage();
-        System.out.println(post.toString() + "----------------------------------------------");
+
         byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
         String base64 = Base64.getEncoder().encodeToString(imageBytes);
         post.setEncodedImage(base64);
