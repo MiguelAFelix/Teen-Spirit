@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("")
-public class TestController {
+public class WebController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
     public String test() {
