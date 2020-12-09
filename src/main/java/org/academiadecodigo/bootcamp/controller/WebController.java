@@ -151,6 +151,7 @@ public class WebController {
 
         this.post = post;
         File file = post.getImage();
+        System.out.println(post.toString() + "----------------------------------------------");
         byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
         String base64 = Base64.getEncoder().encodeToString(imageBytes);
         post.setEncodedImage(base64);
