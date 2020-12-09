@@ -1,9 +1,11 @@
 package org.academiadecodigo.bootcamp.controller;
 
+import org.academiadecodigo.bootcamp.model.Post;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.services.AuthService;
 import org.academiadecodigo.bootcamp.services.FeedService;
 import org.academiadecodigo.bootcamp.services.UserService;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Base64;
 
 @Controller
 @RequestMapping("")
@@ -22,6 +30,7 @@ public class WebController {
     private AuthService authService;
     private FeedService feedService;
     private UserService userService;
+    private Post post;
 
     @RequestMapping(method = RequestMethod.GET, path = {"", "/", ""})
     public String getHome() {
@@ -129,6 +138,25 @@ public class WebController {
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
+    }
+
+    @RequestMapping(method = RequestMethod.GET , path = "/test")
+    public String uploadImage(Model model){
+        model.addAttribute("post", new Post());
+        return "test";
+    }
+    @RequestMapping(method = RequestMethod.GET , path = "/test", params = "action = save")
+    public String encodeImage(@ModelAttribute Post post) throws IOException {
+        this.post = post;
+        File file = post.getImage();
+        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
+        String base64 = Base64.getEncoder().encodeToString(imageBytes);
+        post.setEncodedImage(base64);
+        return "test";
+    }
+
+    public Post getPost(){
+        return post;
     }
 
 

@@ -1,17 +1,21 @@
 package org.academiadecodigo.bootcamp.model;
 
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Base64;
 import java.util.Date;
 
 public class Post {
     private Date postDate = new Date();
-//    private File image;
+    private File image;
     private String urlImage;
     private String quote;
     private String description;
+    private String encodedImage;
 
     public Date getPostDate() {
         return postDate;
@@ -42,38 +46,40 @@ public class Post {
 
 
 //    public int encodePathImage(File file){
-//        try {
-//            FileInputStream fileInputStreamReader = new FileInputStream(file);
-//            byte[] bytes = new byte[(int)file.length()];
-//            int pathImageEncoded = fileInputStreamReader.read(bytes);
-//        } catch (IOException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//
-//        return p;
+//        byte[] imageBytes = IOUtils.resourceToByteArray();
+//        String base64 = Base64.getEncoder().encodeToString(imageBytes);
 //    }
 
-//    public File getPathImage() {
-//        return pathImage;
-//    }
+    public File getImage() {
+        return image;
+    }
 
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
     }
 
-//    public void setPathImage(File pathImage) {
-//        this.pathImage = pathImage;
-//    }
+    public void setImage(File pathImage) {
+        this.image = image;
+    }
 
 
     @Override
     public String toString() {
-        return "ModelPost{" +
+        return "Post{" +
                 "postDate=" + postDate +
+                ", image=" + image +
                 ", urlImage='" + urlImage + '\'' +
                 ", quote='" + quote + '\'' +
                 ", description='" + description + '\'' +
+                ", encodedImage='" + encodedImage + '\'' +
                 '}';
+    }
+
+    public String getEncodedImage() {
+        return encodedImage;
+    }
+
+    public void setEncodedImage(String encodedImage) {
+        this.encodedImage = encodedImage;
     }
 }
