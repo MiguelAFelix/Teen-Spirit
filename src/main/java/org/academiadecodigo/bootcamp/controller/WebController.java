@@ -1,9 +1,7 @@
 package org.academiadecodigo.bootcamp.controller;
 
-import org.academiadecodigo.bootcamp.model.Post;
-import org.academiadecodigo.bootcamp.services.FeedService;
-import org.academiadecodigo.bootcamp.services.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -11,21 +9,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("")
 public class WebController {
 
+    @RequestMapping(method = RequestMethod.GET, path = {"", "/", ""})
+    public String getHome() {
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
-    public String test() {
-
-        return "test";
+        return "home";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
-    public String addPost() {
-        UserService userService = new UserService();
-        FeedService feedService = new FeedService();
+    @RequestMapping(method = RequestMethod.GET, path = {"/dashboard"})
+    public String getDashboard() {
 
-//        userService.getUserMap().get(1).addPost();
-//        feedService.addPost(Post post);
-
-        return "test";
+        return "home";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/about"})
+    public String getAbout() {
+
+        return "about";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/contact"})
+    public String getContact() {
+
+        return "contact";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/feelgood"})
+    public String getFeelGoodPlace() {
+
+        return "feelgoodplace";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/sos"})
+    public String getSOS() {
+
+        return "sos";
+    }
+
+
 }

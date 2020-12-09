@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <thymeleaf th:replace="header :: header" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">TEEN SPIRIT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/testapp/">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/testapp/about">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login" data-toggle="modal" data-target="#loginmodal">LOG IN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signin" data-toggle="modal" data-target="#signinmodal">SIGN UP</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+        <section>
+            INTRO SECTION
+        </section>
+
+        <section>
+            SHOW FEED
+        </section>
+
+        <section>
+            SHOW SOS BUTTON
+        </section>
+
+        <section>
+            SHOW FEEL GOOD PLACE
+        </section>
+
+        <section>
+            FOOTER
+        </section>
+
+
+        <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodallabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginmodallabel">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+
+                            <h2>Username</h2>
+                            <input type="text" placeholder="Username" name="username">
+
+                            <h2>Password</h2>
+                            <input type="password" placeholder="Password" name="password">
+
+                            <div>
+                                <button type="submit" class="btn btn-primary">Log In</button>
+                                <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+
+                        </form>
+
+                        <a data-toggle="modal" data-target="#forgotpwmodal" data-dismiss="modal">Forgot Password?</a>
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-labelledby="signinmodallabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="signinmodallabel">Sign Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+                            <h2>Email</h2>
+                            <input type="email" placeholder="Email" name="email">
+
+                            <h2>Username</h2>
+                            <input type="text" placeholder="Username" name="username">
+
+                            <h2>Password</h2>
+                            <input type="password" placeholder="Password" name="password">
+
+                            <div>
+                                <button type="submit" class="btn btn-primary">Log In</button>
+                                <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="forgotpwmodal" tabindex="-1" role="dialog" aria-labelledby="forgotpwlabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="forgotpwlabel">Sign Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form>
+                            <h2>Email</h2>
+                            <input type="email" placeholder="Email" name="email">
+
+                            <div>
+                                <button type="submit" class="btn btn-primary">Recover password</button>
+                                <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
