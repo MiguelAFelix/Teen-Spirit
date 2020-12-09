@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.academiadecodigo.bootcamp.model.Post;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.services.AuthService;
@@ -13,6 +14,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -31,6 +34,7 @@ public class WebController {
     private FeedService feedService;
     private UserService userService;
     private Post post;
+
 
     @RequestMapping(method = RequestMethod.GET, path = {"", "/", ""})
     public String getHome() {
@@ -142,26 +146,40 @@ public class WebController {
 
     @RequestMapping(method = RequestMethod.GET , path = "/test")
     public String uploadImage(Model model){
-
-        model.addAttribute("post", new Post());
+        post = new Post();
+        model.addAttribute("post", post);
         return "test";
     }
-    @RequestMapping(method = RequestMethod.POST , path = "/test")
-    public String encodeImage(@ModelAttribute ("post") Post post) throws IOException {
-
-        this.post = post;
-        File file = post.getImage();
-
-        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
-        String base64 = Base64.getEncoder().encodeToString(imageBytes);
-        post.setEncodedImage(base64);
-        return "test2";
-    }
+//    @RequestMapping(method = RequestMethod.POST , path = "/test")
+//    public String encodeImage(@ModelAttribute("post") Post post, Model model) throws IOException {
+//        model.addAttribute(post);
+//        File file = post.getImage();
+//
+//        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
+//        String base64 = Base64.getEncoder().encodeToString(imageBytes);
+//        post.setEncodedImage(base64);
+//        return "test2";
+//    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/test2")
     public String testMethod(Model model){
 
-        model.addAttribute("picture", post.getEncodedImage());
+        model.addAttribute("image", post.getEncodedImage());
         return "test2";
+    }
+
+    @RequestMapping(path = "/upload", value = "/upload", method = RequestMethod.POST)
+    public String handleUpload(@RequestParam("file") MultipartFile file, Model model) throws IOException {
+
+        if (!file.isEmpty()) {
+            model.addAttribute(post);
+            byte[] bytes = file.getBytes(); // alternatively, file.getInputStream();
+            String base64 = Base64.getEncoder().encodeToString(bytes);
+            post.setDescription("lalala");
+            post.setQuote("olaolaola");
+            post.setEncodedImage(base64);
+            return "test2";
+        }
+        return "test";
     }
 }

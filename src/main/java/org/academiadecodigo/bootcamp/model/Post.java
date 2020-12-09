@@ -63,17 +63,7 @@ public class Post {
     }
 
 
-    @Override
-    public String toString() {
-        return "Post{" +
-                "postDate=" + postDate +
-                ", image=" + image +
-                ", urlImage='" + urlImage + '\'' +
-                ", quote='" + quote + '\'' +
-                ", description='" + description + '\'' +
-                ", encodedImage='" + encodedImage + '\'' +
-                '}';
-    }
+
 
     public String getEncodedImage() {
         return encodedImage;
