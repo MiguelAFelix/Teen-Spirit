@@ -142,22 +142,25 @@ public class WebController {
 
     @RequestMapping(method = RequestMethod.GET , path = "/test")
     public String uploadImage(Model model){
+
         model.addAttribute("post", new Post());
         return "test";
     }
-    @RequestMapping(method = RequestMethod.GET , path = "/test", params = "action = save")
+    @RequestMapping(method = RequestMethod.POST , path = "/test", params = "action = save")
     public String encodeImage(@ModelAttribute Post post) throws IOException {
+
         this.post = post;
         File file = post.getImage();
         byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
         String base64 = Base64.getEncoder().encodeToString(imageBytes);
         post.setEncodedImage(base64);
-        return "test";
+        return "test2";
     }
 
-    public Post getPost(){
-        return post;
+    @RequestMapping(method = RequestMethod.GET, path = "/test2")
+    public String testMethod(Model model){
+
+        model.addAttribute("picture", post.getEncodedImage());
+        return "test2";
     }
-
-
 }
