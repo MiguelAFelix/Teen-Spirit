@@ -2,6 +2,7 @@ package org.academiadecodigo.bootcamp.model;
 
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,6 +17,7 @@ public class Post {
     private String quote;
     private String description;
     private String encodedImage;
+    private MultipartFile file;
 
     public Date getPostDate() {
         return postDate;
@@ -71,5 +73,13 @@ public class Post {
 
     public void setEncodedImage(String encodedImage) {
         this.encodedImage = encodedImage;
+    }
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 }

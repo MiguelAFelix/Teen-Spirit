@@ -6,7 +6,7 @@
 </head>
 <body>
     <!--/*@thymesVar id="post" type="Post"*/-->
-    <form th:object="${post}" th:action="@{/upload}" enctype="multipart/form-data" method="post">
+    <form th:object="${post}" th:action="@{/test}" enctype="multipart/form-data" method="post">
             File:
         <label for="upload">Upload Image:</label>
         <input type="file" th:field="*{image}"
