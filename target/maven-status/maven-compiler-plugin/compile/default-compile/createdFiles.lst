@@ -1,1 +1,8 @@
+org\academiadecodigo\bootcamp\services\UserService.class
+org\academiadecodigo\bootcamp\services\AuthService.class
+org\academiadecodigo\bootcamp\model\Post.class
+org\academiadecodigo\bootcamp\model\Feed.class
+org\academiadecodigo\bootcamp\model\User.class
 org\academiadecodigo\bootcamp\controller\WebController.class
+org\academiadecodigo\bootcamp\maintest\Main.class
+org\academiadecodigo\bootcamp\services\FeedService.class
