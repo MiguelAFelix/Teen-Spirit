@@ -4,6 +4,6 @@
     <thymeleaf th:replace="header :: header" />
 </head>
 <body>
-<img th:attr="src=@{'data:image/png, image/jpg, image/jpeg;base64, '+${post.encodedImage}}" alt="feed"/>
+<img th:attr="src=@{'data:image/jpeg;base64, '+${post.encodedImage}}" alt="feed"/>
 </body>
 </html>
