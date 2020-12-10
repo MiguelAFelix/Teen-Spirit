@@ -143,18 +143,18 @@ public class WebController {
         model.addAttribute("imagePost", imagePost);
         return "test";
     }
-    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, path = {"/test"}, params = "action=save")
-    public String encodeImage(@RequestBody ImagePost imagePost, Model model, RedirectAttributes redirectAttributes) throws IOException {
-        model.addAttribute(imagePost);
-        File file = imagePost.getPic();
-        System.out.println(file + "------------------------------------------------------");
-
-        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
-        String base64 = Base64.getEncoder().encodeToString(imageBytes);
-        imagePost.setEncodedImage(base64);
-        redirectAttributes.addFlashAttribute("lastAction", "saved");
-        return "redirect:/test2";
-    }
+//    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, path = {"/test"}, params = "action=save")
+//    public String encodeImage(@RequestBody ImagePost imagePost, Model model, RedirectAttributes redirectAttributes) throws IOException {
+//        model.addAttribute(imagePost);
+//        File file = imagePost.getPic();
+//        System.out.println(file + "------------------------------------------------------");
+//
+//        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
+//        String base64 = Base64.getEncoder().encodeToString(imageBytes);
+//        imagePost.setEncodedImage(base64);
+//        redirectAttributes.addFlashAttribute("lastAction", "saved");
+//        return "redirect:/test2";
+//    }
 
 //    @RequestMapping(path = "/test", value = "/test", method = RequestMethod.POST)
 //    public String handleUpload(@RequestParam("imagePost") MultipartFile file, Model model) throws IOException {
