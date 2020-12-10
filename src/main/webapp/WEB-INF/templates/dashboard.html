@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <thymeleaf th:replace="header :: header" />
+    <style>
+
+        @font-face {
+          font-family:"vtks";
+          src: url("../../../resources/Vtks.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"acidl";
+          src: url("../../../resources/ACIDL.TTF") format("truetype");
+        }
+
+        @font-face {
+          font-family:"slave";
+          src: url("../../../resources/Slave.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"whiteblack";
+          src: url("../../../resources/whiteblack.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"montserrat";
+          src: url("../../../resources/MontserratSemiBold.ttf") format("truetype");
+        }
+
+        body {
+            font-family: montserrat;
+            color: black;
+            background-color: #181818;
+        }
+
+        .container-fluid {
+            background-color: #181818;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .container-fluid, .row {
+            margin: auto;
+        }
+
+        .feed {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .background {
+            background-image:url("../../../resources/Untitled.svg");
+            background-size: cover;
+        }
+
+        .background-right {
+            background-position: right;
+        }
+
+        .nav-link {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h2 {
+            padding-left: 50px;
+            font-size: 60px;
+        }
+
+        .navbar {
+            font-size: 40px;
+            background-color: #181818;
+        }
+
+        .post > img {
+            width: 90%;
+        }
+
+        .col {
+            height: 100vh;
+        }
+
+        .feedDiv {
+            background-color: #fcdb43;
+        }
+
+        .logoDiv {
+            display: flex;
+            flex-direction: column;
+            font-family: whiteblack;
+            color: #FBC81F;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .challengeDescription {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+
+        .challengeTitle {
+            transform: rotate(-3deg);
+            margin-bottom: 0px;
+        }
+
+        .feed {
+            height: 75%;
+            overflow-y: scroll;
+            overflow: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .navbar-brand {
+            font-size: 60px;
+            color: #FBC81F;
+            font-family: whiteblack;
+        }
+
+        .navbar-nav {
+            font-size: 30px;
+        }
+
+        .challenge {
+            margin-bottom: 100px;
+        ]
+
+        .challengeDiv {
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg">
+            <img src="../../../resources/smile.svg" height="90px">
+            <a class="navbar-brand" href="#">TEEN SPIRIT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">DASHBOARD</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">FEEL GOOD PLACE</a>
+                    </li>
+                    <!--                            <li class="nav-item">-->
+                    <!--                                <a class="nav-link" href="/sos">SOS</a>-->
+                    <!--                            </li>-->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout" >LOG OUT</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+
+            <div class="col col-lg-1 background">
+    <!--            <img src="../../../resources/grungeBackground.svg">-->
+            </div>
+
+            <div class="col feedDiv">
+
+                <div class="feed">
+
+                    <div class="post">
+                        <img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_2305.jpg">
+                    </div>
+
+                    <div class="post">
+                        <img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_2305.jpg">
+                    </div>
+
+                    <div class="post">
+                        <img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_2305.jpg">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col col-lg-4 logoDiv">
+
+                <div class="challenge">
+                    <p class="challengeTitle">THIS WHEEK'S</p>
+                    <p>CHALLENGE</p>
+                    <p class="challengeDescription">Best photo with a duck</p>
+                </div>
+
+
+                <div class="challengeimg">
+                    <img src="https://images.dog.ceo/breeds/wolfhound-irish/n02090721_2305.jpg" width="90%">
+                </div>
+            </div>
+
+        </div>
+
+</div>
+</body>
+</html>

@@ -2,52 +2,198 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <thymeleaf th:replace="header :: header" />
+    <title>Teen Spirit</title>
+
+    <style>
+
+        @font-face {
+          font-family:"vtks";
+          src: url("../../../resources/Vtks.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"acidl";
+          src: url("../../../resources/ACIDL.TTF") format("truetype");
+        }
+
+        @font-face {
+          font-family:"slave";
+          src: url("../../../resources/Slave.ttf") format("truetype");
+        }
+
+        body {
+            font-family: slave;
+            color: black;
+<!--            background-color: #181818;-->
+        }
+
+        .container-fluid {
+            background-color: #181818;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .container-fluid, .row {
+            margin: auto;
+        }
+
+        .feed {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .background {
+<!--            background-image:url("../../../resources/Untitled.svg");-->
+<!--            background-img:url("../../../resources/wall2.jpg")-->
+            background-size: cover;
+        }
+
+        .background-right {
+            background-position: right;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        h2 {
+            padding-left: 50px;
+            font-size: 60px;
+        }
+
+        .navbar {
+            font-size: 40px;
+            background-color: #181818;
+        }
+
+        .post > img {
+            width: 90%;
+        }
+
+        .col {
+            height: 100vh;
+        }
+
+<!--        .feedDiv {-->
+<!--            background-color: #fcdb43;-->
+<!--        }-->
+
+        .logoDiv {
+            display: flex;
+            justify-content: center;
+        }
+
+<!--        .feed {-->
+<!--            height: 75%;-->
+<!--            overflow-y: scroll;-->
+<!--            overflow: scroll;-->
+<!--        }-->
+
+<!--        ::-webkit-scrollbar {-->
+<!--            width: 0px;-->
+<!--            background: transparent; /* make scrollbar transparent */-->
+<!--        }-->
+
+        .navbar-brand {
+            font-size: 60px;
+            color: #FBC81F;
+        }
+
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">TEEN SPIRIT</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--    <a class="navbar-brand" href="#">TEEN SPIRIT</a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">ABOUT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="" data-toggle="modal" data-target="#loginmodal">LOG IN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="" data-toggle="modal" data-target="#signinmodal">SIGN UP</a>
-            </li>
-        </ul>
-        </div>
-    </nav>
-    <div class="container">
+<!--    navbar  -->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--        <ul class="navbar-nav mr-auto">-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="/">HOME</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="/about">ABOUT</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="" data-toggle="modal" data-target="#loginmodal">LOG IN</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="" data-toggle="modal" data-target="#signinmodal">SIGN UP</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--    <div class="container">-->
 
-        <section>
-            INTRO SECTION
-        </section>
+        <div class="container-fluid">
 
-        <section>
-            SHOW FEED
-        </section>
+            <nav class="navbar navbar-expand-lg">
+                <img src="../../../resources/smile.svg" height="90px">
+                <a class="navbar-brand" href="#">TEEN SPIRIT</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <section>
-            SHOW SOS BUTTON
-        </section>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">DASHBOARD</a>
+                        </li>
 
-        <section>
-            SHOW FEEL GOOD PLACE
-        </section>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">FEEL GOOD PLACE</a>
+                        </li>
+                        <!--                            <li class="nav-item">-->
+                        <!--                                <a class="nav-link" href="/sos">SOS</a>-->
+                        <!--                            </li>-->
 
-        <section>
-            FOOTER
-        </section>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout" >LOG OUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="container">
+                <div class="text-center">
+                    <img src="../../../resources/wall2.png" id="banner" class="rounded mx-auto d-block  .bg-dark text-white" alt="banner">
+                </div>
+            </div>
+
+
+
+<!--        guide sections -->
+<!--        <section>-->
+<!--            INTRO SECTION-->
+<!--        </section>-->
+
+<!--        <section>-->
+<!--            SHOW FEED-->
+<!--        </section>-->
+
+<!--        <section>-->
+<!--            SHOW SOS BUTTON-->
+<!--        </section>-->
+
+<!--        <section>-->
+<!--            SHOW FEEL GOOD PLACE-->
+<!--        </section>-->
+
+<!--        <section>-->
+<!--            FOOTER-->
+<!--        </section>-->
 
 
         <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodallabel" aria-hidden="true">
@@ -80,7 +226,7 @@
 
                     </div>
                     <div class="modal-footer">
-
+                        <h2>No account? <a data-toggle="modal" data-target="#signinmodal" data-dismiss="modal">Sign up</a></h2>
                     </div>
                 </div>
             </div>
