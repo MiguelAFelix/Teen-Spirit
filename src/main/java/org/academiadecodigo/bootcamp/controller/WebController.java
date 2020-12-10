@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -69,6 +70,8 @@ public class WebController {
 
     }
 
+
+
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action = save")
     public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
@@ -93,23 +96,19 @@ public class WebController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
-    public String saveLogin(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-        if (bindingResult.hasErrors()) {
-            return "login";
-        }
-
+    public String saveLogin(@Valid @ModelAttribute("user") User user,@PathVariable Integer id, RedirectAttributes redirectAttributes) {
         if(authService.logIn(user.getUsername(), user.getPassword(), user.getId())){
             return "dashboard";
         }else {
             redirectAttributes.addFlashAttribute("lastAction", "Username or password incorrect");
-            return "login";
+            return "redirect:/login/";
         }
 
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
-    public String cancelSaveCustomer() {
-        return "redirect:/dashboard/";
+    public String cancel() {
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/logout"})

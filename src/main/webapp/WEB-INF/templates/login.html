@@ -116,17 +116,22 @@
 
                 <h2 class="title">LOG IN</h2>
 
-                <form>
+                <form th:object="${user}" th:action="@{/dashboard}" action="/"  method="post">
 
+                    <input type="hidden" th:field="*{id}"/>
+                    <div class="form-group">
                     <h2>Username</h2>
-                    <input type="text" name="username">
-
+                    <input th:field="*{username}" class="form-control" type="text" name="username" required>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </div>
+                        <div class="form-group">
                     <h2>Password</h2>
-                    <input type="password" name="password">
-
+                    <input th:field="*{password}" class="form-control" type="password" name="password" required>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </div>
                     <div>
-                        <button type="submit" class="btn btn-primary">Log In</button>
-                        <button type="cancel" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="save">Log In</button>
+                        <button type="cancel" class="btn btn-danger" name="action" value="cancel">Cancel</button>
                     </div>
 
                 </form>
