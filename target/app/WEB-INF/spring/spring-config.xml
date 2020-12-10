@@ -13,7 +13,11 @@
     <!-- Base package to search for spring beans -->
     <context:component-scan base-package="org.academiadecodigo.bootcamp"/>
 
-<!--    <import resource="persistence.xml"/>-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="maxUploadSize" value="8000000"/>
+    </bean>
+
     <import resource="presentation.xml"/>
 
 </beans>
