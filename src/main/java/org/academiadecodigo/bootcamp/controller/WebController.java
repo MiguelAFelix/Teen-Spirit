@@ -145,18 +145,18 @@ public class WebController {
     public String uploadImage(Model model){
         post = new Post();
         model.addAttribute("post", post);
-        return "test";
+        return "test3";
     }
-//    @RequestMapping(method = RequestMethod.POST ,value = "/test", path = "/test")
-//    public String encodeImage(@ModelAttribute("post") Post post, Model model) throws IOException {
-//        model.addAttribute(post);
-//        File file = post.getImage();
-//
-//        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
-//        String base64 = Base64.getEncoder().encodeToString(imageBytes);
-//        post.setEncodedImage(base64);
-//        return "test2";
-//    }
+    @RequestMapping(method = RequestMethod.POST ,value = "/test", path = "/test")
+    public String encodeImage(@ModelAttribute("post") Post post, Model model) throws IOException {
+        model.addAttribute(post);
+        File file = post.getImage();
+
+        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
+        String base64 = Base64.getEncoder().encodeToString(imageBytes);
+        post.setEncodedImage(base64);
+        return "test2";
+    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/test2")
     public String testMethod(Model model){
@@ -165,20 +165,20 @@ public class WebController {
         return "test2";
     }
 
-    @RequestMapping(path = "/test", value = "/test", method = RequestMethod.POST)
-    public String handleUpload(@RequestParam("file") MultipartFile file, BindingResult result, Model model) throws IOException {
-
-        if (!file.isEmpty()) {
-            if(result.hasErrors()) {
-                model.addAttribute(post);
-                byte[] bytes = file.getBytes(); // alternatively, file.getInputStream();
-                String base64 = Base64.getEncoder().encodeToString(bytes);
-                post.setDescription("lalala");
-                post.setQuote("olaolaola");
-                post.setEncodedImage(base64);
-                return "test2";
-            }
-        }
-        return "test";
-    }
+//    @RequestMapping(path = "/test", value = "/test", method = RequestMethod.POST)
+//    public String handleUpload(@RequestParam("file") MultipartFile file, BindingResult result, Model model) throws IOException {
+//
+//        if (!file.isEmpty()) {
+//            if(result.hasErrors()) {
+//                model.addAttribute(post);
+//                byte[] bytes = file.getBytes(); // alternatively, file.getInputStream();
+//                String base64 = Base64.getEncoder().encodeToString(bytes);
+//                post.setDescription("lalala");
+//                post.setQuote("olaolaola");
+//                post.setEncodedImage(base64);
+//                return "test2";
+//            }
+//        }
+//        return "test";
+//    }
 }
