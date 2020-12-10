@@ -99,7 +99,7 @@ public class WebController {
         }
 
         if(authService.logIn(user.getUsername(), user.getPassword(), user.getId())){
-            return "dashboard"; //?????????????????????
+            return "dashboard";
         }else {
             redirectAttributes.addFlashAttribute("lastAction", "Username or password incorrect");
             return "login";
