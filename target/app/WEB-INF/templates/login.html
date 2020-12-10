@@ -47,7 +47,60 @@
 
         .background {
             background-image:url("../../../resources/login.jpg");
-<!--            background-size: cover;-->
+            background-position: center;
+            height: 100vh;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 200px;
+
+        }
+
+        h2 {
+            font-family: whiteblack;
+        }
+
+        .btn {
+            background-color: transparent!important;
+            border: none!important;
+            font-family: vtks;
+            font-size: 25px;
+        }
+
+        a {
+            font-family:vtks;
+        }
+
+        input {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 4rem;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttons > button {
+            font-size: 40px;
+        }
+
+        input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 5px;
+        }
+
+        .loginBtn {
+            color: #fcdb43;
         }
 
 
@@ -59,19 +112,21 @@
 
         <div class="row">
 
-            <div class="col col-lg-1 background">
+            <div class="col background">
+
+                <h2 class="title">LOG IN</h2>
 
                 <form>
 
                     <h2>Username</h2>
-                    <input type="text" placeholder="Username" name="username">
+                    <input type="text" name="username">
 
                     <h2>Password</h2>
-                    <input type="password" placeholder="Password" name="password">
+                    <input type="password" name="password">
 
                     <div>
                         <button type="submit" class="btn btn-primary">Log In</button>
-                        <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="cancel" class="btn btn-secondary">Cancel</button>
                     </div>
 
                 </form>
