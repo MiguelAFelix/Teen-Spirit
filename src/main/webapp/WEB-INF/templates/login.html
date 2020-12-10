@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <thymeleaf th:replace="header :: header"></thymeleaf>
+    <style>
+
+        @font-face {
+          font-family:"vtks";
+          src: url("../../../resources/Vtks.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"acidl";
+          src: url("../../../resources/ACIDL.TTF") format("truetype");
+        }
+
+        @font-face {
+          font-family:"slave";
+          src: url("../../../resources/Slave.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"whiteblack";
+          src: url("../../../resources/whiteblack.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"montserrat";
+          src: url("../../../resources/MontserratSemiBold.ttf") format("truetype");
+        }
+
+        body {
+            font-family: montserrat;
+            color: black;
+            background-color: #181818;
+        }
+
+        .container-fluid {
+            background-color: #181818;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .container-fluid, .row {
+            margin: auto;
+        }
+
+        .background {
+            background-image:url("../../../resources/login.jpg");
+<!--            background-size: cover;-->
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col col-lg-1 background">
+
+                <form>
+
+                    <h2>Username</h2>
+                    <input type="text" placeholder="Username" name="username">
+
+                    <h2>Password</h2>
+                    <input type="password" placeholder="Password" name="password">
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                        <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+
+                </form>
+
+                <a data-toggle="modal" data-target="#forgotpwmodal" data-dismiss="modal">Forgot Password?</a>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
