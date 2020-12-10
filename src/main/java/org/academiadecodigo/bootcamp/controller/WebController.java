@@ -44,7 +44,7 @@ public class WebController {
     @RequestMapping(method = RequestMethod.GET, path = {"/about"})
     public String getAbout() {
 
-        return "about";
+        return "test";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/contact"})
@@ -143,8 +143,8 @@ public class WebController {
         model.addAttribute("imagePost", imagePost);
         return "test";
     }
-    @RequestMapping(method = RequestMethod.POST, path = {"/test2"})
-    public String encodeImage(@ModelAttribute("imagePost") ImagePost imagePost, Model model) throws IOException {
+    @RequestMapping(method = RequestMethod.POST, path = {"/test2"}, params = "action=save")
+    public String encodeImage(@RequestParam("imagePost") ImagePost imagePost, Model model) throws IOException {
         model.addAttribute(imagePost);
         File file = imagePost.getPic();
         System.out.println(file + "------------------------------------------------------");
