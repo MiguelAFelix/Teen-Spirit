@@ -31,10 +31,21 @@
           src: url("../../../resources/MontserratSemiBold.ttf") format("truetype");
         }
 
+        .h1 {
+            font-family:vtks;
+            color: black;
+        }
+
+        .text{
+            font-family:vtks;
+            color: black;
+        }
+
         body {
             font-family: montserrat;
             color: black;
             background-color: #181818;
+            background-image: url("../../../resources/About.png");
             overflow: hidden;
         }
 
@@ -48,30 +59,30 @@
             margin: auto;
         }
 
-        .feed {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            margin-top: 50px;
-        }
+<!--        .feed {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            flex-direction: column;-->
+<!--            margin-top: 50px;-->
+<!--        }-->
 
-        .post {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-        }
+<!--        .post {-->
+<!--            margin-bottom: 20px;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--        }-->
 
         .background {
-            margin-top: 5px;
-            background-image:url("../../../resources/Untitled.svg");
-            background-size: cover;
+            margin-top: 10em;
+            display: flex;
+            justify-content: center;
         }
 
-        .challengeHomeDiv {
-            margin-top: 5px;
-            background-image:url("../../../resources/Untitled.svg");
-            background-size: cover;
-        }
+<!--        .challengeHomeDiv {-->
+<!--            margin-top: 5px;-->
+<!--            background-image:url("../../../resources/Untitled.svg");-->
+<!--            background-size: cover;-->
+<!--        }-->
 
         .wallDiv {
             margin-top:5px;
@@ -80,9 +91,9 @@
             background-position: center;
         }
 
-        .background-right {
-            background-position: right;
-        }
+<!--        .background-right {-->
+<!--            background-position: right;-->
+<!--        }-->
 
         .nav-link {
             color: white;
@@ -216,138 +227,15 @@
     </nav>
 
 
-    <div class="row">
 
-        <div class="col col-lg-1 background">
-            <!--            <img src="../../../resources/grungeBackground.svg">-->
-        </div>
+</div>
 
-        <div class="col col-lg-3 logoDiv">
-            <img src="../../../resources/smile.svg" width="90%">
-        </div>
+<div class="background" >
+    <h1>ABOUT</h1>
 
-        <div class="col col-lg-4 wallDiv">
+   <p class="text"> kjjgdsfibasdugcçahsbcfugasfv snjbcksb kjbskilasb</p>
 
-        </div>
 
-        <div class="col col-lg-4 challengeHomeDiv">
-            <div class="challengeImg" style="display: flex;
-                                                                    flex-direction: column;
-                                                                    align-items: center;
-                                                                    margin-bottom: 30px;
-                                                                    margin-top: 20%;
-                                                                    font-family: whiteblack;
-                                                                    font-size: 40px;
-                                                                    color: white;
-                                                                    background-color: #181818;">
-                <p style="margin-top:20px;">LAST WEEK'S WINNER</p>
-                <p style="font-family:vtks">Best photo with a duck</p>
-                <img src="../../../resources/hackathon.jpg" width="50%" style="margin-bottom:20px;">
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodallabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginmodallabel">Log In</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form>
-
-                        <h2>Username</h2>
-                        <input type="text" placeholder="Username" name="username">
-
-                        <h2>Password</h2>
-                        <input type="password" placeholder="Password" name="password">
-
-                        <div>
-                            <button type="submit" class="btn btn-primary">Log In</button>
-                            <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        </div>
-
-                    </form>
-
-                    <a data-toggle="modal" data-target="#forgotpwmodal" data-dismiss="modal">Forgot Password?</a>
-
-                </div>
-                <div class="modal-footer">
-                    <h2>No account? <a data-toggle="modal" data-target="#signinmodal" data-dismiss="modal">Sign up</a></h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-labelledby="signinmodallabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signinmodallabel">Sign Up</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form>
-                        <h2>Email</h2>
-                        <input type="email" placeholder="Email" name="email">
-
-                        <h2>Username</h2>
-                        <input type="text" placeholder="Username" name="username">
-
-                        <h2>Password</h2>
-                        <input type="password" placeholder="Password" name="password">
-
-                        <div>
-                            <button type="submit" class="btn btn-primary">Log In</button>
-                            <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        </div>
-
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="forgotpwmodal" tabindex="-1" role="dialog" aria-labelledby="forgotpwlabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="forgotpwlabel">Sign Up</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form>
-                        <h2>Email</h2>
-                        <input type="email" placeholder="Email" name="email">
-
-                        <div>
-                            <button type="submit" class="btn btn-primary">Recover password</button>
-                            <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        </div>
-
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 </body>
