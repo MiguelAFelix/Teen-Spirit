@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <thymeleaf th:replace="header :: header"></thymeleaf>
+    <style>
+
+        @font-face {
+          font-family:"vtks";
+          src: url("../../../resources/Vtks.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"acidl";
+          src: url("../../../resources/ACIDL.TTF") format("truetype");
+        }
+
+        @font-face {
+          font-family:"slave";
+          src: url("../../../resources/Slave.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"whiteblack";
+          src: url("../../../resources/whiteblack.ttf") format("truetype");
+        }
+
+        @font-face {
+          font-family:"montserrat";
+          src: url("../../../resources/MontserratSemiBold.ttf") format("truetype");
+        }
+
+        body {
+            font-family: montserrat;
+            color: black;
+            background-color: #181818;
+        }
+
+        .container-fluid {
+            background-color: #181818;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .container-fluid, .row {
+            margin: auto;
+        }
+
+
+
+
+        .upload {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            margin-top: 1%;
+        }
+
+        .background {
+            background-image:url("../../../resources/Untitled.svg");
+            background-size: cover;
+        }
+
+        .background-right {
+            background-position: right;
+        }
+
+        .nav-link {
+            color: white;
+            font-family: 'vtks';
+        }
+
+        .nav-link:hover{
+            color: #FBC81F;
+        }
+
+        h2 {
+            padding-left: 50px;
+            font-size: 60px;
+        }
+
+        .navbar {
+            height:120px;
+            font-size: 40px;
+            background-color: #181818;
+            -webkit-box-shadow: 0 8px 6px -6px #000; -moz-box-shadow: 0 8px 6px -6px #000; box-shadow: 0 8px 6px -6px #000;
+        }
+
+        .post > img {
+            width: 90%;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .col {
+            height: calc(100vh - 120px);
+
+        }
+
+
+
+        .logoDiv {
+            display: flex;
+            flex-direction: column;
+            font-family: whiteblack;
+            color: #FBC81F;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .challengeDescription {
+            font-family: 'slave';
+            color: white;
+            font-size: 56px;
+        }
+
+        .challengeTitle {
+            transform: rotate(-3deg);
+            margin-bottom: 0px;
+            font-size: 48px;
+        }
+
+        .winner {
+            font-family:"vtks";
+            color: #FBC81F;
+        }
+
+        #winnerimage {
+            padding-left: 10px;
+            filter: drop-shadow(0 0.2rem 0.25rem rgba(255, 226, 71, 0.2));
+        }
+
+        .feed {
+            margin-top: 8px;
+            overflow-y: auto;
+            overflow: auto;
+            background-color: #fcdb43;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .navbar-brand {
+            letter-spacing: 7px;
+            font-size: 60px;
+            color: #FBC81F;
+            font-family: whiteblack;
+        }
+
+
+         .navbar-brand:hover {
+            color: #FBC81F;
+        }
+
+        .navbar-nav {
+            font-size: 1em;
+        }
+
+        .challenge {
+            margin-top: 25px;
+            margin-bottom: 45px;
+        }
+
+<!--        .lastchallenge {-->
+<!--            margin-bottom: px;-->
+<!--        ]}-->
+
+        .challengeDiv {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        #challengeParag {
+        margin-bottom: 0px!important;
+            font-size: 48px;
+        }
+
+        #fita{
+            margin-top: 8px;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-rows: 50% 50% ;
+            grid-template-columns: 50% 50% ;
+            gap: 5px;
+        }
+
+
+
+
+
+        @media only screen and (max-width: 892px) {  .logoDiv { display: none; } }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg">
+            <img src="../../../resources/smile.svg" height="90px">
+            <a class="navbar-brand" href="#">TEEN SPIRIT</a>
+            <button class="navbar-toggler navbar-dark"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">HOME</a>
+                    </li>
+
+                    <li class="nav-item" style="padding-left: 70px;padding-right: 70px;">
+                        <a class="nav-link" href="/dashboard">DASHBOARD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">LOG OUT</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+
+            <div id="fita" class="col col-lg-1 col-md-1 col-sm-1 background">
+    <!--            <img src="../../../resources/grungeBackground.svg">-->
+            </div>
+
+            <div class="col col-lg-8 col-md-9 col-sm-9 feed">
+                <div class="upload">
+                    <a class="nav-link" href="/">UPLOAD PIC</a>
+                </div>
+                <div class="grid">
+                    <div>
+                       <img src="https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/1399817_10151741548592963_1208926145_o.jpg?_nc_cat=104&ccb=2&_nc_sid=174925&_nc_eui2=AeGBsOWz85ltjnVivXNZwn0N0_pniyRST9nT-meLJFJP2SFw4TaEyqQSZ92BVY2K8Rw&_nc_ohc=gTaeaSF-KwIAX8xT86_&_nc_ht=scontent.flis5-1.fna&oh=6ce983572eb4e5a186fe440c3f569bb0&oe=5FF674FC">
+                    </div>
+                    <div>
+                        <img src="https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/15129612_1547408611942931_355695205876422301_o.jpg?_nc_cat=109&ccb=2&_nc_sid=8bfeb9&_nc_eui2=AeEXvnSpzKB2ET6_0ZXted8-OKF1igpcX984oXWKClxf32QAneqOm2mCitMO_NqWrW0&_nc_ohc=uRaBGusxUtkAX9lhqwN&_nc_ht=scontent.flis5-1.fna&oh=b0ae77852d262cf0dfd88d2b406ea77b&oe=5FF74C29">
+                    </div>
+                    <div>
+                        <img src="https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/13217154_10153623536772963_7936688576442843657_o.jpg?_nc_cat=104&ccb=2&_nc_sid=9267fe&_nc_eui2=AeE7QoJH3_AZWMtTFzzDSuRFyWxaDwTv19rJbFoPBO_X2hl8E9UtxuGkWfYUU3oGXE4&_nc_ohc=tpP1Khlzy0MAX9qTuPo&_nc_oc=AQlIi4GyGxGzAOikvZCWXaKYorRbWP_aYYnPW4OUjYSI9kgM9OS3hnhDlcHNVZPa-j_3BLfGg6F3ZP0DzTm7tHag&_nc_ht=scontent.flis5-1.fna&oh=e7b9fdb03168d08afd6c27464a05e9df&oe=5FF90C03">
+                    </div>
+                    <div>
+                        <img src="https://www.fiumani.it/wp-content/uploads/2019/04/fiumani-led-art-canvas-painting-5.jpg">
+                    </div>
+                    <div>
+                        <img src="https://scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/90708403_3426551780692328_3376961621808119808_o.jpg?_nc_cat=107&ccb=2&_nc_sid=a26aad&_nc_eui2=AeFQCA3xVibGThIokFpa8gzk4TSfTwH0aH3hNJ9PAfRofTak-5VMw4bUYK-UKkYhgSc&_nc_ohc=eVbFUVTTBdkAX8wt6j7&_nc_ht=scontent.flis5-1.fna&oh=06e89beff35ec5ce8542694e055b45c0&oe=5FF700BA">
+                    </div>
+                    <div>
+                        <img src="https://scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/59286230_2713529165327930_2389545706995056640_o.jpg?_nc_cat=102&ccb=2&_nc_sid=9267fe&_nc_eui2=AeHS3-z0rMXTEaxienB21sJB-6cMB4u15Zn7pwwHi7XlmVmWX9ekNoe_KThnC1N4-wI&_nc_ohc=ZqtHgqT6ACQAX_iLZB1&_nc_ht=scontent.flis5-1.fna&oh=2fb1641eb05adbbe9409bd48c21d7b74&oe=5FF5BE15">
+                    </div>
+                    <div>
+                        <img src="https://video-images.vice.com/_uncategorized/1526426881718-fiumani-freak.png">
+                    </div>
+                    <div>
+                        <img src="https://scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/93778189_3483848748295964_5476581986757771264_o.jpg?_nc_cat=109&ccb=2&_nc_sid=9267fe&_nc_eui2=AeELFPU3tSvcwMTQ5WOUlZjGO0R0pBVulo07RHSkFW6WjeYHRMBVsNuFCB5xW8TPYZY&_nc_ohc=rFr9lpIBIXkAX8LYovr&_nc_ht=scontent.flis5-1.fna&oh=d604abf7374c922fcc5438c7cb8409f0&oe=5FF779C8">
+                    </div>
+
+<!--                    <table class="table table-striped">-->
+<!--                        <tr th:each="user : ${user.getBox()}">-->
+<!--                        <td th:text="user">-->
+<!--                    </table>-->
+
+                </div>
+
+            </div>
+
+            <div class="col col-lg-3 col-md-1 col-sm-1 logoDiv">
+
+                <div class="challenge">
+                    <p class="challengeTitle">THIS WEEK'S</p>
+                    <p id="challengeParag">CHALLENGE</p>
+                    <p class="challengeDescription">Best photo with a duck</p>
+                </div>
+
+
+                <div class="lastweekcha">
+                    <div class="lastchallenge">
+                        <p class="winner">LAST WEEK'S WINNER</p>
+                    </div>
+
+
+                <div id="challengeImg" class="container-fluid" style="width:8em;">
+                    <img class="img-thumbnail" src="../../../resources/hackathon.jpg">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -40,7 +40,6 @@ public class AuthService {
     public boolean logIn(String username, String password, Integer id){
         User user = userService.findUser(id);
         if(user.getUsername().equals(username) && user.getPassword().equals(password)){
-            System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO_---------------------------");
             accessingUser = user;
             return true;
         }

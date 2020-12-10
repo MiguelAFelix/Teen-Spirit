@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -50,10 +49,10 @@ public class WebController {
         return "contact";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/feelgood"})
-    public String getFeelGoodPlace() {
+    @RequestMapping(method = RequestMethod.GET, path = {"/mystash"})
+    public String getMyStash() {
 
-        return "feelgoodplace";
+        return "gurpastash";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/sos"})
@@ -79,7 +78,7 @@ public class WebController {
         }
 
         if(authService.signUp(user.getUsername(), user.getPassword(), user.getEmail())){
-            return "dashboard"; //?????????????????????
+            return "gurpastash"; //?????????????????????
         }else {
             redirectAttributes.addFlashAttribute("lastAction", "Username already exists.");
             return "signUp";
@@ -95,8 +94,8 @@ public class WebController {
 
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
-    public String saveLogin(@Valid @ModelAttribute("user") User user,@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+    @RequestMapping(method = RequestMethod.GET, path = {"/user", ""})
+    public String saveLogin(@Valid @ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
         if(authService.logIn(user.getUsername(), user.getPassword(), user.getId())){
             return "dashboard";
         }else {
