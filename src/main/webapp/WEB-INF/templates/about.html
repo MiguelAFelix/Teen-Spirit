@@ -31,14 +31,21 @@
           src: url("../../../resources/MontserratSemiBold.ttf") format("truetype");
         }
 
-        .h1 {
-            font-family:vtks;
+        h1 {
+            font-family: whiteblack;
             color: black;
+            font-size: 6em;
         }
 
         .text{
             font-family:vtks;
             color: black;
+            font-size: 2em;
+            margin-left: 5em;
+            padding-left: 9em;
+            margin-right: 4em;
+            padding-right: 9em;
+            text-align: center;
         }
 
         body {
@@ -76,7 +83,26 @@
             margin-top: 10em;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2em;
+
         }
+
+        .developers {
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 2em;
+            font-family: 'whiteblack';
+
+    font-size: 2em;
+    color: #181818;
+
+        }
+
 
 <!--        .challengeHomeDiv {-->
 <!--            margin-top: 5px;-->
@@ -178,6 +204,11 @@
             color: #FBC81F;
         }
 
+        .about{
+        display:block;
+        font-family: 'vtks';
+        }
+
 <!--        .challenge {-->
 <!--            margin-bottom: 100px;-->
 <!--        }-->
@@ -231,12 +262,34 @@
 </div>
 
 <div class="background" >
-    <h1>ABOUT</h1>
+    <div class="about"><h1>ABOUT</h1></div>
 
-   <p class="text"> kjjgdsfibasdugcçahsbcfugasfv snjbcksb kjbskilasb</p>
-
-
+   <div><p class="text about"> Teen Spirit is an anti-social network made particularly for all those who feel out of place and for whom regular
+       social networks don't seem to make sense.
+       Against the so called "perfection", this platform is a space for the real and ugly.
+   </p></div>
 
 </div>
+    <div class="developers">
+        <div>
+            <p>Developed by:</p>
+        </div>
+
+        <div>
+            <p>Filipa Monteiro</p>
+        </div>
+
+        <div>
+            <p>Goncalo Pereira dos Santos</p>
+        </div>
+
+        <div>
+            <p>Miguel Felix</p>
+        </div>
+
+        <div>
+            <p>Ana Simao</p>
+        </div>
+    </div>
 </body>
 </html>
