@@ -1,7 +1,6 @@
 package org.academiadecodigo.bootcamp.services;
 
-import org.academiadecodigo.bootcamp.model.Post;
-import org.academiadecodigo.bootcamp.model.User;
+import org.academiadecodigo.bootcamp.model.ImagePost;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,25 +11,25 @@ import java.util.List;
 public class FeedService {
 
     private AuthService authService;
-    private List<Post> postList;
+    private List<ImagePost> imagePostList;
 
     public FeedService(){
-        postList = new ArrayList<>();
+        imagePostList = new ArrayList<>();
 
     }
 
-    public List<Post> getPostList(){
-        return postList;
+    public List<ImagePost> getPostList(){
+        return imagePostList;
     }
 
-    public void addPost(Post post){
-        postList.add(post);
-        authService.getAccessingUser().addPost(post);
+    public void addPost(ImagePost imagePost){
+        imagePostList.add(imagePost);
+        authService.getAccessingUser().addPost(imagePost);
 
     }
-    public void removePost(Post post){
-        postList.remove(post);
-        authService.getAccessingUser().removePost(post);
+    public void removePost(ImagePost imagePost){
+        imagePostList.remove(imagePost);
+        authService.getAccessingUser().removePost(imagePost);
     }
 
     @Autowired

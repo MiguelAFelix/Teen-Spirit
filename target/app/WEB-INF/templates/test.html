@@ -5,11 +5,11 @@
 <!--    <link rel="icon" type="image/png" href="/favicon.ico"/>-->
 </head>
 <body>
-    <!--/*@thymesVar id="post" type="Post"*/-->
-    <form th:object="${post}" th:action="@{/test}" enctype="multipart/form-data" method="post">
+    <!--/*@thymesVar id="imagePost" type="Post"*/-->
+    <form th:object="${imagePost}" th:action="@{/test}" enctype="multipart/form-data" method="post">
             File:
         <label for="upload">Upload Image:</label>
-        <input type="file" th:field="*{image}"
+        <input type="file" th:name="test" th:field="*{pic}"
                id="upload" name="upload"
                accept="image/jpg">
         <button type="submit" class="btn btn-primary" name="action" value="save">Submit</button>

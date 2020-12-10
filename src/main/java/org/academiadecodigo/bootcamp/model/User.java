@@ -22,7 +22,7 @@ public class User {
     @Size(min=7, max=16)
     private String password;
 
-    private List<Post> box = new ArrayList<>();
+    private List<ImagePost> box = new ArrayList<>();
 
 
     public String getPassword() {
@@ -33,11 +33,11 @@ public class User {
         this.password = password;
     }
 
-    public List<Post> getBox() {
+    public List<ImagePost> getBox() {
         return box;
     }
 
-    public void setBox(List<Post> box) {
+    public void setBox(List<ImagePost> box) {
         this.box = box;
     }
 
@@ -65,12 +65,12 @@ public class User {
         this.username = username;
     }
 
-    public void addPost(Post post){
-        box.add(post);
+    public void addPost(ImagePost imagePost){
+        box.add(imagePost);
     }
 
-    public void removePost(Post post){
-        box.remove(post);
+    public void removePost(ImagePost imagePost){
+        box.remove(imagePost);
     }
 
     @Override

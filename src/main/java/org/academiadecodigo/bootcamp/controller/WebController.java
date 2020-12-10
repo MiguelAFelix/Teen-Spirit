@@ -1,6 +1,6 @@
 package org.academiadecodigo.bootcamp.controller;
 
-import org.academiadecodigo.bootcamp.model.Post;
+import org.academiadecodigo.bootcamp.model.ImagePost;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.services.AuthService;
 import org.academiadecodigo.bootcamp.services.FeedService;
@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -24,13 +21,12 @@ import java.io.IOException;
 import java.util.Base64;
 
 @Controller
-@RequestMapping("")
 public class WebController {
 
     private AuthService authService;
     private FeedService feedService;
     private UserService userService;
-    private Post post;
+    private ImagePost imagePost;
 
 
     @RequestMapping(method = RequestMethod.GET, path = {"", "/", ""})
@@ -143,42 +139,43 @@ public class WebController {
 
     @RequestMapping(method = RequestMethod.GET , path = "/test")
     public String uploadImage(Model model){
-        post = new Post();
-        model.addAttribute("post", post);
-        return "test3";
+        imagePost = new ImagePost();
+        model.addAttribute("imagePost", imagePost);
+        return "test";
     }
-    @RequestMapping(method = RequestMethod.POST ,value = "/test", path = "/test")
-    public String encodeImage(@ModelAttribute("post") Post post, Model model) throws IOException {
-        model.addAttribute(post);
-        File file = post.getImage();
+    @RequestMapping(method = RequestMethod.POST, path = {"/test2"})
+    public String encodeImage(@ModelAttribute("imagePost") ImagePost imagePost, Model model) throws IOException {
+        model.addAttribute(imagePost);
+        File file = imagePost.getPic();
+        System.out.println(file + "------------------------------------------------------");
 
         byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(file));
         String base64 = Base64.getEncoder().encodeToString(imageBytes);
-        post.setEncodedImage(base64);
-        return "test2";
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/test2")
-    public String testMethod(Model model){
-
-        model.addAttribute("image", post.getEncodedImage());
+        imagePost.setEncodedImage(base64);
         return "test2";
     }
 
 //    @RequestMapping(path = "/test", value = "/test", method = RequestMethod.POST)
-//    public String handleUpload(@RequestParam("file") MultipartFile file, BindingResult result, Model model) throws IOException {
+//    public String handleUpload(@RequestParam("file") MultipartFile file, Model model) throws IOException {
 //
 //        if (!file.isEmpty()) {
-//            if(result.hasErrors()) {
-//                model.addAttribute(post);
+//
+//                model.addAttribute(imagePost);
 //                byte[] bytes = file.getBytes(); // alternatively, file.getInputStream();
 //                String base64 = Base64.getEncoder().encodeToString(bytes);
-//                post.setDescription("lalala");
-//                post.setQuote("olaolaola");
-//                post.setEncodedImage(base64);
+//                imagePost.setDescription("lalala");
+//                imagePost.setQuote("olaolaola");
+//                imagePost.setEncodedImage(base64);
 //                return "test2";
-//            }
+//
 //        }
 //        return "test";
+//    }
+
+//    @PostMapping
+//    public String upload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
+//        redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename() + "!");
+//
+//        return "redirect:/test";
 //    }
 }

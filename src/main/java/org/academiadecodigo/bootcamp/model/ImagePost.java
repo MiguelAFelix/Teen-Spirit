@@ -1,18 +1,14 @@
 package org.academiadecodigo.bootcamp.model;
 
 
-import org.apache.commons.io.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Base64;
 import java.util.Date;
 
-public class Post {
+public class ImagePost {
     private Date postDate = new Date();
-    private File image;
+    private File pic;
     private String urlImage;
     private String quote;
     private String description;
@@ -52,17 +48,19 @@ public class Post {
 //        String base64 = Base64.getEncoder().encodeToString(imageBytes);
 //    }
 
-    public File getImage() {
-        return image;
+    public void setPic(File pic) {
+        this.pic = pic;
+    }
+
+    public File getPic() {
+        return pic;
     }
 
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
     }
 
-    public void setImage(File pathImage) {
-        this.image = image;
-    }
+
 
 
 

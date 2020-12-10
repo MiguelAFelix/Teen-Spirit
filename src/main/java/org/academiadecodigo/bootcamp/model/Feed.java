@@ -5,22 +5,22 @@ import java.util.List;
 
 public class Feed {
 
-    private List<Post> feed = new ArrayList<>();
+    private List<ImagePost> feed = new ArrayList<>();
 
-    public List<Post> getFeed() {
+    public List<ImagePost> getFeed() {
         return feed;
     }
 
-    public void setFeed(List<Post> feed) {
+    public void setFeed(List<ImagePost> feed) {
         this.feed = feed;
     }
 
-    public void addToFeed(Post post){
-        feed.add(post);
+    public void addToFeed(ImagePost imagePost){
+        feed.add(imagePost);
     }
 
-    public void removeFromFeed(Post post){
-        feed.remove(post);
+    public void removeFromFeed(ImagePost imagePost){
+        feed.remove(imagePost);
     }
 
     @Override
