@@ -9,7 +9,7 @@
     <form th:object="${imagePost}" th:action="@{/test}" enctype="multipart/form-data" method="POST">
             File:
         <label for="upload">Upload Image:</label>
-        <input type="file" th:name="test" th:field="*{pic}"
+        <input th:type="file" th:name="test" th:field="*{pic}"
                id="upload" name="upload"
                accept="image/jpg">
         <button type="submit" class="btn btn-primary" name="action" value="save">Submit</button>
