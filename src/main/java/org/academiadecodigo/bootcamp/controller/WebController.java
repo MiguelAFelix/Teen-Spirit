@@ -105,9 +105,9 @@ public class WebController {
 
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""}, params = "action=cancel")
     public String cancel() {
-        return "redirect:/home";
+        return "home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/logout"})
