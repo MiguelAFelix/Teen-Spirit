@@ -243,13 +243,16 @@
 
             <div class="col col-lg-8 col-md-9 col-sm-9 feed">
 
-                    <div class="post">
+                    <div class="post" id="div1">
                         <img class="imgdiv" src="https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/11145139_10153181003817963_355697657324638182_o.jpg?_nc_cat=104&ccb=2&_nc_sid=9267fe&_nc_eui2=AeHnx_bB4_cR4AmK2M7kQGdDzTmbCLk2rS_NOZsIuTatLxosWWOlfjMj-ub80TEuYxo&_nc_ohc=Vk30Ae1T_XQAX_yqThd&_nc_ht=scontent.flis5-1.fna&oh=43122b3a0d4e710882d0b587566282c3&oe=5FF68BBE">
                         <div class="ximg">
                             <a href="#" data-toggle="modal" data-target="#voteModal"><img src="../../../resources/vote.png" height="60px"></a>
                             <a href="#" data-toggle="modal" data-target="#reportModal"><img src="../../../resources/report.png" height="60px"></a>
                         </div>
+                    </div>
 
+                    <div class="post" id="div1-removed" style="display:none; text-align:center;">
+                        <p>You've reported this image.</p>
                     </div>
 
                     <div class="post">
@@ -365,48 +368,49 @@
 
 
                 <div class="modal fade" id="voteModal" tabindex="-1" role="dialog" aria-labelledby="voteModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="voteModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
                             <div class="modal-body">
                                 You sure you want to vote?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">NOP</button>
-                                <button type="button" class="btn btn-primary">OFC</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">OFC</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="reportModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
                             <div class="modal-body">
                                 PICTURE PERFECT PIC?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">NEVERMIND</button>
-                                <button type="button" class="btn btn-primary">YES, DELETE IT</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="1" onclick="clickHandler(event)">YES, DELETE IT</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
         </div>
-
+    </div>
 </div>
+
+<script>
+    function clickHandler(e) {
+
+        var id = e.toElement.id;
+
+        var name = 'div' + id;
+
+        var newDiv = 'div' + id + '-removed';
+
+        document.getElementById(name).style.display = "none";
+
+        document.getElementById(newDiv).style.display = "block";
+    }
+</script>
 </body>
 </html>
