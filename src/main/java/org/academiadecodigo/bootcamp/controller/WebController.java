@@ -105,9 +105,9 @@ public class WebController {
 
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""}, params = "action=cancel")
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
     public String cancel() {
-        return "home";
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/logout"})
@@ -131,12 +131,7 @@ public class WebController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.GET , path = "/test")
-    public String uploadImage(Model model){
-        imagePost = new ImagePost();
-        model.addAttribute("imagePost", imagePost);
-        return "test";
-    }
+
 //    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, path = {"/test"}, params = "action=save")
 //    public String encodeImage(@RequestBody ImagePost imagePost, Model model, RedirectAttributes redirectAttributes) throws IOException {
 //        model.addAttribute(imagePost);
